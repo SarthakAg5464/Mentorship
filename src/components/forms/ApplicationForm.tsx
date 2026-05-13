@@ -13,6 +13,13 @@ export const ApplicationForm = () => {
     setStatus(null);
 
     const formData = new FormData(e.currentTarget);
+    const resultPdf = formData.get('resultPdf') as File;
+
+    if (resultPdf && resultPdf.size > 2 * 1024 * 1024) {
+      setStatus({ type: 'error', message: 'File is too large. Maximum size is 2MB.' });
+      setLoading(false);
+      return;
+    }
 
     try {
       const response = await fetch('/api/apply', {
@@ -38,7 +45,7 @@ export const ApplicationForm = () => {
   return (
     <GlassCard>
       <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', textAlign: 'center' }}>Registration Form</h2>
-      
+
       {status && (
         <div className={`status-message status-${status.type}`}>
           {status.message}
@@ -48,12 +55,12 @@ export const ApplicationForm = () => {
       <form onSubmit={handleSubmit} className="form-grid">
         <div className="payment-section full-width">
           <h3 style={{ marginBottom: '1rem' }}>UPI Payment Details</h3>
-          <p className="feature-desc">Scan QR to pay Mentorship Fee (₹149)</p>
+          <p className="feature-desc">Scan QR to pay Mentorship Fee (₹{process.env.NEXT_PUBLIC_FEES || '149'})</p>
           <div className="qr-placeholder">
-            <img 
-              src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=mentorship@upi&pn=EliteMentorship&am=149&cu=INR" 
-              alt="UPI QR Code" 
-              style={{ width: '100%', height: '100%', borderRadius: '0.5rem' }} 
+            <img
+              src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent('upi://pay?pa=9927092507@ptyes&pn=SARTHAK%20AGARWAL&am=149&cu=INR')}`}
+              alt="UPI QR Code"
+              style={{ width: '100%', height: '100%', borderRadius: '0.5rem' }}
             />
           </div>
         </div>

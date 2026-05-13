@@ -10,7 +10,6 @@ export default function Home() {
 
   return (
     <main>
-      {/* Hero Section */}
       <section className="hero-section">
         <div className="price-tag">Counselling Mentorship 2026</div>
         <h1 className="hero-title">
@@ -32,7 +31,6 @@ export default function Home() {
       </section>
 
       <div className="container">
-        {/* University Highlights */}
         <section style={{ padding: '4rem 0 2rem 0' }}>
           <h2 className="section-title" style={{ marginBottom: '2rem' }}>About the Legacy: MMMUT Gorakhpur</h2>
           <div className="bento-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
@@ -51,7 +49,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Features Section */}
         <section style={{ padding: '4rem 0' }}>
           <h2 className="section-title">Why Trust MMMUT Insiders?</h2>
           <div className="bento-grid">
@@ -97,7 +94,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Application Section */}
         <section id="apply-section" style={{ padding: '4rem 0' }}>
           <h2 className="section-title">Join the Mentorship Program</h2>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
