@@ -32,6 +32,25 @@ export default function Home() {
       </section>
 
       <div className="container">
+        {/* University Highlights */}
+        <section style={{ padding: '4rem 0 2rem 0' }}>
+          <h2 className="section-title" style={{ marginBottom: '2rem' }}>About the Legacy: MMMUT Gorakhpur</h2>
+          <div className="bento-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+            <GlassCard>
+              <h3 className="feature-title">60+ Years</h3>
+              <p className="feature-desc">Formerly MMMEC, one of North India's oldest and most prestigious engineering institutions.</p>
+            </GlassCard>
+            <GlassCard>
+              <h3 className="feature-title">354 Acre Campus</h3>
+              <p className="feature-desc">A massive, lush green residential campus with state-of-the-art labs and sports facilities.</p>
+            </GlassCard>
+            <GlassCard>
+              <h3 className="feature-title">Placement Excellence</h3>
+              <p className="feature-desc">Record placements in companies like Google, Amazon, Adobe, and top PSUs every year.</p>
+            </GlassCard>
+          </div>
+        </section>
+
         {/* Features Section */}
         <section style={{ padding: '4rem 0' }}>
           <h2 className="section-title">Why Trust MMMUT Insiders?</h2>
